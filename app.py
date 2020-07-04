@@ -25,7 +25,7 @@ def init():
 @app.route('/', methods=['GET', 'POST'])
 def home():
 
-    return render_template("home.html")
+    return render_template("backup.html")
 
 @app.route('/sentiment_analysis_prediction', methods = ['POST', "GET"])
 def sent_anly_prediction():
@@ -51,7 +51,7 @@ def sent_anly_prediction():
         else:
             sentiment = 'Positive'
             img_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Smiling_Emoji.png')
-    return render_template('home.html', text=text, sentiment=sentiment, probability=probability, image=img_filename)
+    return render_template('backup.html', text=text, sentiment=sentiment, probability=probability, image=img_filename)
 #########################Code for Sentiment Analysis
 
 if __name__ == "__main__":
